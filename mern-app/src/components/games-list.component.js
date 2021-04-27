@@ -9,25 +9,25 @@ const Game = props => (
         <td>{props.game.result}</td>
         <td>{props.game.duration}</td>
         <td>
-            
-            <Link to={"/edit/"+props.game_id}>edit</Link> | <a href='#' onClick={() => { props.deleteGame(props.game._id) }}>delete</a>   
+        <Link to={"/edit/"+props.game._id}>edit</Link> | <a href="#" onClick={() => { props.deleteGame(props.game._id) }}>delete</a>
         </td>  
     </tr>
 )
+
 
 export default class GamesList extends Component {
     constructor(props){
         super(props);
 
         this.deleteGame = this.deleteGame.bind(this);
-        this.state = {exercises: []};
+        this.state = {games: []};
 
     }
 
     componentDidMount() {
         axios.get('http://localhost:5000/games/')
             .then(response => {
-                this.setState({ exercises: response.data })
+                this.setState({ games: response.data })
             })
             .catch((error) => {
                 console.log(error);

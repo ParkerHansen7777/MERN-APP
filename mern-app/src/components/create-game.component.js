@@ -5,8 +5,8 @@ export default class CreateGames extends Component {
         super(props);
 
         this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onChangeResult = this.onChangeResult.bind(this);
+        this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
