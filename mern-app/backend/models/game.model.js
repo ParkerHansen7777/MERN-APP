@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
     username: { type: String, required: true, },
+    gamePlayed: {type: String, required: true, },
     result: { type: String, required: true },
     duration: { type: Number, required: true },
 }, {

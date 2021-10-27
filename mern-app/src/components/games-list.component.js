@@ -6,6 +6,7 @@ import axios from 'axios';
 const Game = props => (
     <tr>
         <td>{props.game.username}</td>
+        <td>{props.game.gamePlayed}</td>
         <td>{props.game.result}</td>
         <td>{props.game.duration}</td>
         <td>
@@ -56,6 +57,7 @@ export default class GamesList extends Component {
                     <thead className="thead-light">
                         <tr>
                             <th>Username</th>
+                            <th>Game Played</th>
                             <th>Result</th>
                             <th>Duration</th>
                             <th>Actions</th>

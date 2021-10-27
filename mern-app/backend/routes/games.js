@@ -9,6 +9,7 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     const username = req.body.username;
+    const gamePlayed = req.body.gamePlayed;
     const result = req.body.result;
     const duration = Number(req.body.duration);
 
@@ -16,6 +17,7 @@ router.route('/add').post((req, res) => {
     
     const newGame = new Game({
         username,
+        gamePlayed,
         result,
         duration,
     });
@@ -41,6 +43,7 @@ router.route('/update/:id').post((req, res) => {
     Game.findById(req.params.id)
         .then(game => {
             game.username = req.body.username;
+            game.gamePlayed = req.body.gamePlayed;
             game.result = req.body.result;
             game.duration = Number(req.body.duration);
             

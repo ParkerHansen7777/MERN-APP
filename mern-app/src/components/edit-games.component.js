@@ -5,12 +5,14 @@ export default class EditGames extends Component {
         super(props);
 
         this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onChangeGame = this.onChangeGame.bind(this);
         this.onChangeResult = this.onChangeResult.bind(this);
         this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             username: '',
+            gamePlayed: '',
             result: '',
             duration: 0,
             users: []
@@ -22,6 +24,7 @@ export default class EditGames extends Component {
           .then(response => {
             this.setState({
               username: response.data.username,
+              gamePlayed: response.data.gamePlayed,
               result: response.data.result,
               duration: response.data.duration,
             })   
@@ -51,6 +54,12 @@ export default class EditGames extends Component {
         });
     }
 
+    onChangeGame(e) {
+        this.setState({
+           gamePlayed: e.target.value
+        });
+    }
+    
     onChangeResult(e) {
         this.setState({
            result: e.target.value
@@ -68,6 +77,7 @@ export default class EditGames extends Component {
 
         const game = {
             username: this.state.username,
+            gamePlayed: this.state.gamePlayed,
             result: this.state.result,
             duration: this.state.duration
             
@@ -105,6 +115,15 @@ export default class EditGames extends Component {
                             })
                         }
                     </select>
+                </div>
+                <div className="form-group">
+                    <label>Game Played: </label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.gamePlayed}
+                        onChange={this.onChangeGame}
+                        />
                 </div>
                 <div className="form-group">
                     <label>Result: </label>
