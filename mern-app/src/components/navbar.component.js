@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./navbar.css";
+
+
 export default class Navbar extends Component {
 
     render() {
         return (
-          <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
+          <nav className="navbar">
             <Link to="/" className="navbar-brand">GameTracker</Link>
-            <div className="collpase navbar-collapse">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav">
                 <li className="navbar-item">
                     <Link to="/" className="nav-link">Games</Link>
                 </li>
@@ -19,7 +20,6 @@ export default class Navbar extends Component {
                     <Link to="/user" className="nav-link">Create User</Link>
                 </li>
             </ul>
-            </div>
           </nav>  
         );
     }

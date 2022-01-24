@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "./component.css";
 
 const Game = props => (
     <tr>
@@ -51,10 +52,10 @@ export default class GamesList extends Component {
     }
     render(){
         return(
-            <div>
+            <div className="page">
                 <h3>Logged Games</h3>
                 <table className="table">
-                    <thead className="thead-light">
+                    <thead className="thead">
                         <tr>
                             <th>Username</th>
                             <th>Game Played</th>
@@ -63,7 +64,7 @@ export default class GamesList extends Component {
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="tbody">
                         { this.gameList() }
                     </tbody>
                 </table>

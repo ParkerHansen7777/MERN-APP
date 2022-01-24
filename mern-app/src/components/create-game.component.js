@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./component.css";
 export default class CreateGames extends Component {
     constructor(props) {
         super(props);
@@ -80,7 +81,7 @@ export default class CreateGames extends Component {
 
     render(){
         return(
-        <div>
+        <div className="page">
             <h3>Create New Game Log</h3>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">

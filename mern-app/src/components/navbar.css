@@ -1,2 +1,43 @@
+.navbar{
+    border: 3px solid red;
+    background-color: rgb(3, 28, 112);
+    display: inline;
+    width: 100%;
+    float: left;
+    margin: 0px auto;
+    position: relative;
+    
+    
+}
 
 
+.navbar-nav{
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    margin: 0 auto;
+    list-style: none;
+border: 3px solid rgb(255, 187, 0);
+}
+
+.navbar-item{
+    
+    margin: 5px;
+    display: inline;
+    position: relative;
+    
+}
+
+.navbar-brand{
+    margin: 5px;
+    display: inline;
+    border: 3px solid black;
+    position: relative;
+    color: white;
+}
+
+.nav-link{
+
+    display: inline;
+    color: white;
+}

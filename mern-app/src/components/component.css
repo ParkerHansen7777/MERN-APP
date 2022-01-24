@@ -1,0 +1,29 @@
+.page{
+
+    background-color: lavender;
+}
+
+.table{
+    
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+
+.thead{
+
+    background-color: rgb(160, 160, 160);
+}
+
+.tbody {
+
+    border: 1px solid black;
+
+}
+
+.form-group{
+    padding: 7px;
+    display: inline-block;
+    position: relative;
+    
+}
