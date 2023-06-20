@@ -28,11 +28,7 @@ function App() {
         <Route path="/edit/:id" exact component={EditGame} />
         <Route path="/create" exact component={CreateGame} />
         <Route path="/user" exact component={CreateUser} />
-        <div className="App">
-          <h1>{message}</h1>
-        </div>
     </Router>
-    
   );
 }
 
