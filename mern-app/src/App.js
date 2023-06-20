@@ -15,7 +15,7 @@ function App() {
   
   const [message, setMessage] = useState("");
   useEffect(() => {
-    fetch("https://gametracker-mern-app.onrender.com")
+    fetch("https://YOUR_BACKEND_URL.com")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   },[]);
