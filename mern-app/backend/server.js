@@ -7,13 +7,7 @@ require('dotenv').config();
 const app = express();                  /* creates Express server */
 const port = process.env.PORT || 5000;  /* port */
 
-
-const corsOptions = {
-    origin: "https://gametracker-frontend.onrender.com/", // frontend URI (ReactJS)
-}
-
-app.use(cors()); 
-app.use(cors(corsOptions));                       /* cors middleware */
+app.use(cors());                        /* cors middleware */
 app.use(express.json());                /* help to parse JSON */
 
 const uri = process.env.ATLAS_URI;
@@ -32,8 +26,4 @@ app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
-});
-
-app.get("/", (req, res) => {
-    res.status(201).json({message: "Connected to Backend!"});
 });
