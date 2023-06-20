@@ -22,7 +22,12 @@ function App() {
   
   
   return (
+    
+    
     <Router>
+        <div className="App">
+          <h1>{message}</h1>
+        </div>
         <Navbar />
         <br/>
         <Route path="/" exact component={GamesList} />
