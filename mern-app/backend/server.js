@@ -7,7 +7,11 @@ require('dotenv').config();
 const app = express();                  /* creates Express server */
 const port = process.env.PORT || 5000;  /* port */
 
-app.use(cors());                        /* cors middleware */
+const corsOptions = {
+    origin: "YOUR_FRONTEND_URL", // frontend URI (ReactJS)
+}
+
+app.use(cors(corsOptions));             /* cors middleware */
 app.use(express.json());                /* help to parse JSON */
 
 const uri = process.env.ATLAS_URI;
