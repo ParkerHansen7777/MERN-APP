@@ -97,7 +97,7 @@ export default class EditGames extends Component {
 
     render(){
         return(
-        <div className="page">
+        <body>
             <h3>Edit Game Log</h3>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -148,7 +148,7 @@ export default class EditGames extends Component {
                     <input type="submit" value="Edit Game Log" className="btn btn-primary" />
                 </div>
             </form>
-        </div>
+        </body>
         )
     }
 }

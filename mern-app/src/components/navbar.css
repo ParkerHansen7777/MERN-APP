@@ -1,10 +1,9 @@
 .navbar{
     
     background-color: rgb(3, 28, 112);
-    display: inline;
     width: 100%;
     float: left;
-    margin: 0px auto;
+    margin: auto;
     position: relative;
     
     
@@ -12,12 +11,13 @@
 
 
 .navbar-nav{
+    
+    display: inline-block;
     text-align: center;
     justify-content: center;
-    display: inline-block;
-    margin: 0 auto;
+    margin: auto;
     list-style: none;
-border: 3px solid rgb(255, 187, 0);
+    border: 3px solid rgb(255, 187, 0);
 }
 
 .navbar-item{
@@ -32,7 +32,7 @@ border: 3px solid rgb(255, 187, 0);
     margin: 5px;
     display: inline;
     border: 3px solid black;
-    position: relative;
+    position: fixed;
     color: white;
 }
 

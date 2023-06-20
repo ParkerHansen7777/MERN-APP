@@ -52,7 +52,7 @@ export default class GamesList extends Component {
     }
     render(){
         return(
-            <div className="page">
+            <body>
                 <h3>Logged Games</h3>
                 <table className="table">
                     <thead className="thead">
@@ -68,7 +68,7 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
-            </div>
+            </body>
         )
     }
 }
