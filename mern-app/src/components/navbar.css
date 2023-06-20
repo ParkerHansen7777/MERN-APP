@@ -17,7 +17,7 @@
     justify-content: center;
     margin: auto;
     list-style: none;
-    border: 3px solid rgb(255, 187, 0);
+    
 }
 
 .navbar-item{
@@ -29,9 +29,8 @@
 }
 
 .navbar-brand{
-    margin: 5px;
+    margin-left: 2%;
     display: inline;
-    border: 3px solid black;
     position: fixed;
     color: white;
 }
