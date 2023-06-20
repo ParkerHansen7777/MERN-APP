@@ -12,7 +12,8 @@ const corsOptions = {
     origin: "https://gametracker-frontend.onrender.com/", // frontend URI (ReactJS)
 }
 
-app.use(cors());                        /* cors middleware */
+app.use(cors()); 
+app.use(cors(corsOptions));                       /* cors middleware */
 app.use(express.json());                /* help to parse JSON */
 
 const uri = process.env.ATLAS_URI;
