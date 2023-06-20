@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 /*import Sidebar from "./components/sidebar.component";*/
@@ -11,6 +12,15 @@ import "./App.css";
 import "./components/component.css";
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("https://gametracker-backend.onrender.com/")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  },[]);
+  
+  
   return (
     <Router>
         <Navbar />
