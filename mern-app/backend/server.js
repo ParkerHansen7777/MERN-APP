@@ -8,7 +8,7 @@ const app = express();                  /* creates Express server */
 const port = process.env.PORT || 5000;  /* port */
 
 const corsOptions = {
-    origin: "https://gametracker-mern-app-frontend.onrender.com", // frontend URI (ReactJS)
+    origin: "YOUR_FRONTEND_URL", // frontend URI (ReactJS)
 }
 
 app.use(cors(corsOptions));             /* cors middleware */
