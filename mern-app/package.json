@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install-server": "cd backend && npm install",
-    "start-server": "cd backend && node server.js",
+    "start-server": "cd backend && nodemon server",
     "install-client": "cd npm install",
     "build-client": "cd npm run build",
     "start-client": "cd npm run start"
