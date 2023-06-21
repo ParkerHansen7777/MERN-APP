@@ -8,14 +8,12 @@ export default class EditGames extends Component {
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeGame = this.onChangeGame.bind(this);
         this.onChangeResult = this.onChangeResult.bind(this);
-        this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             username: '',
             gamePlayed: '',
             result: '',
-            duration: 0,
             users: []
         }
     }
@@ -27,7 +25,6 @@ export default class EditGames extends Component {
               username: response.data.username,
               gamePlayed: response.data.gamePlayed,
               result: response.data.result,
-              duration: response.data.duration,
             })   
           })
           .catch(function (error) {
@@ -67,11 +64,6 @@ export default class EditGames extends Component {
         });
     }
     
-    onChangeDuration(e) {
-        this.setState({
-           duration: e.target.value
-        });
-    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -79,8 +71,7 @@ export default class EditGames extends Component {
         const game = {
             username: this.state.username,
             gamePlayed: this.state.gamePlayed,
-            result: this.state.result,
-            duration: this.state.duration
+            result: this.state.result
             
         }
 
@@ -133,15 +124,6 @@ export default class EditGames extends Component {
                         className="form-control"
                         value={this.state.result}
                         onChange={this.onChangeResult}
-                        />
-                </div>
-                <div className="form-group">
-                    <label>Duration (in minutes): </label>
-                    <input 
-                        type="text"
-                        className="form-control"
-                        value={this.state.duration}
-                        onChange={this.onChangeDuration}
                         />
                 </div>
                 <div className="form-group">

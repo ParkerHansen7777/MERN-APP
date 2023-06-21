@@ -8,14 +8,12 @@ export default class CreateGames extends Component {
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangeGame = this.onChangeGame.bind(this);
         this.onChangeResult = this.onChangeResult.bind(this);
-        this.onChangeDuration = this.onChangeDuration.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             username: '',
-            gamePlayed: '',
-            result: '',
-            duration: 0,
+            gamePlayed: 'Chess',
+            result: 'Win',
             users: []
         }
     }
@@ -50,12 +48,6 @@ export default class CreateGames extends Component {
            result: e.target.value
         });
     }
-    
-    onChangeDuration(e) {
-        this.setState({
-           duration: e.target.value
-        });
-    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -63,8 +55,7 @@ export default class CreateGames extends Component {
         const game = {
             username: this.state.username,
             gamePlayed: this.state.gamePlayed,
-            result: this.state.result,
-            duration: this.state.duration
+            result: this.state.result
             
         }
 
@@ -75,7 +66,7 @@ export default class CreateGames extends Component {
         
     
 
-        window.location = '/';
+        //window.location = '/';
     }
 
 
@@ -85,7 +76,7 @@ export default class CreateGames extends Component {
             <h3>Create New Game Log</h3>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
-                    <label>Username: </label>
+                    <label>Player: </label>
                     <select ref="userInput"
                         required
                         className="form-control"
@@ -103,30 +94,25 @@ export default class CreateGames extends Component {
                 </div>
                 <div className="form-group">
                     <label>Game Played: </label>
-                    <input type="text"
+                    <select ref="userInput"
                         required
                         className="form-control"
                         value={this.state.gamePlayed}
-                        onChange={this.onChangeGame}
-                        />
+                        on={this.onChangeGame}>
+                        <option selected="Chess" value="Chess">Chess</option>
+                    </select>
                 </div>
                 <div className="form-group">
                     <label>Result: </label>
-                    <input type="text"
+                    <select ref="userInput"
                         required
                         className="form-control"
                         value={this.state.result}
-                        onChange={this.onChangeResult}
-                        />
-                </div>
-                <div className="form-group">
-                    <label>Duration (in minutes): </label>
-                    <input 
-                        type="text"
-                        className="form-control"
-                        value={this.state.duration}
-                        onChange={this.onChangeDuration}
-                        />
+                        onChange={this.onChangeResult}>
+                        <option>Win</option>
+                        <option value="Draw">Draw</option>
+                        <option value="Loss">Loss</option>
+                    </select>
                 </div>
                 <div className="form-group">
                     <input type="submit" value="Create Game Log" className="btn btn-primary" />

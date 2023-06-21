@@ -9,7 +9,6 @@ const Game = props => (
         <td>{props.game.username}</td>
         <td>{props.game.gamePlayed}</td>
         <td>{props.game.result}</td>
-        <td>{props.game.duration}</td>
         <td>
         <Link to={"/edit/"+props.game._id}>edit</Link> | <a href="#" onClick={() => { props.deleteGame(props.game._id) }}>delete</a>
         </td>  
@@ -57,10 +56,9 @@ export default class GamesList extends Component {
                 <table className="table">
                     <thead className="thead">
                         <tr>
-                            <th>Username</th>
+                            <th>Player</th>
                             <th>Game Played</th>
                             <th>Result</th>
-                            <th>Duration</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

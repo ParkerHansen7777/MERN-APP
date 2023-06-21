@@ -11,7 +11,7 @@ router.route('/add').post((req, res) => {
     const username = req.body.username;
     const gamePlayed = req.body.gamePlayed;
     const result = req.body.result;
-    const duration = Number(req.body.duration);
+   
 
     
     
@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
         username,
         gamePlayed,
         result,
-        duration,
+        
     });
 
     newGame.save()
@@ -45,7 +45,7 @@ router.route('/update/:id').post((req, res) => {
             game.username = req.body.username;
             game.gamePlayed = req.body.gamePlayed;
             game.result = req.body.result;
-            game.duration = Number(req.body.duration);
+            
             
             game.save()
                 .then(() => res.json('Game updated!'))

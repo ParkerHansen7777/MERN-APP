@@ -42,7 +42,7 @@ export default class CreateUsers extends Component {
                 <h3>Create New User</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Username: </label>
+                        <label>Player name: </label>
                         <input type="text"
                             required
                             className="form-control"

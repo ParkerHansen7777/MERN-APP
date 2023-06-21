@@ -8,13 +8,13 @@ export default class Navbar extends Component {
     render() {
         return (
           <nav className="navbar">
-            <Link to="/" className="navbar-brand">GameTracker</Link>
+            <Link to="/" className="navbar-brand">Chess Results Table</Link>
             <ul className="navbar-nav">
                 <li className="navbar-item">
                     <Link to="/" className="nav-link">Games</Link>
                 </li>
                 <li className="navbar-item">
-                    <Link to="/create" className="nav-link">Create Game</Link>
+                    <Link to="/create" className="nav-link">Log Result</Link>
                 </li>
                 <li className="navbar-item">
                     <Link to="/user" className="nav-link">Create User</Link>
