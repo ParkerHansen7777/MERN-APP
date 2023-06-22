@@ -66,6 +66,22 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
+                <h3>Results Table</h3>
+                <table className="table">
+                    <thead className="thead">
+                        <tr>
+                            <th>Player</th>
+                            <th>Games Played</th>
+                            <th>Wins</th>
+                            <th>Draws</th>
+                            <th>Loses</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody">
+                        
+                    </tbody>
+                </table>
             </body>
         )
     }
