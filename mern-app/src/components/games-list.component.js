@@ -37,7 +37,7 @@ export default class GamesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://gametracker-backend.onrender.com:5000/games/')
+        axios.get('https://gametracker-backend.onrender.com/games/')
             .then(response => {
                 this.setState({ games: response.data })
             })
