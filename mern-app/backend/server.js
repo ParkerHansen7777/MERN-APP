@@ -11,7 +11,7 @@ const corsOptions = {
 const app = express();                  /* creates Express server */
 const port = process.env.PORT || 5000;  /* port */
 
-app.use(cors());                        /* cors middleware */
+app.use(cors(corsOptions));                        /* cors middleware */
 app.use(express.json());                /* help to parse JSON */
 
 const uri = process.env.ATLAS_URI;
