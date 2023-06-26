@@ -19,7 +19,7 @@ export default class EditGames extends Component {
     }
     
     componentDidMount() {
-        axios.get('https://gametracker-frontend.onrender.com/games/'+this.props.match.params.id)
+        axios.get('https://gametracker-backend.onrender.com/games/'+this.props.match.params.id)
           .then(response => {
             this.setState({
               username: response.data.username,
@@ -31,7 +31,7 @@ export default class EditGames extends Component {
             console.log(error);
           })
     
-        axios.get('https://gametracker-frontend.onrender.com/users/')
+        axios.get('https://gametracker-backend.onrender.com/users/')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
@@ -77,7 +77,7 @@ export default class EditGames extends Component {
 
         console.log(game);
 
-        axios.post('https://gametracker-frontend.onrender.com/games/update/'+this.props.match.params.id, game)
+        axios.post('https://gametracker-backend.onrender.com/games/update/'+this.props.match.params.id, game)
             .then(res => console.log(res.data));
         
     

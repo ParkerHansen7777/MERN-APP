@@ -19,7 +19,7 @@ export default class CreateGames extends Component {
     }
     
     componentDidMount() {
-       axios.get('https://gametracker-frontend.onrender.com/users/')
+       axios.get('https://gametracker-backend.onrender.com/users/')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({

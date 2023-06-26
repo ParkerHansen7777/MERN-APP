@@ -28,7 +28,7 @@ export default class CreateUsers extends Component {
 
         console.log(user);
 
-        axios.post('https://gametracker-frontend.onrender.com/users/add', user)
+        axios.post('https://gametracker-backend.onrender.com/users/add', user)
             .then(res => console.log(res.data));
         this.setState({
             username: ''
