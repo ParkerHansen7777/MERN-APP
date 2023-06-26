@@ -37,7 +37,7 @@ export default class GamesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://gametracker-backend.onrender.com/games/')
+        axios.get('http://localhost:5000/games/')
             .then(response => {
                 this.setState({ games: response.data })
             })
@@ -47,7 +47,7 @@ export default class GamesList extends Component {
     }
 
     deleteGame(id) {
-        axios.delete('https://gametracker-backend.onrender.com/games/'+id)
+        axios.delete('http://localhost:5000/games/'+id)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -97,7 +97,7 @@ export default class GamesList extends Component {
                         {this.resultTable()}
                     </tbody>
                 </table> 
-        -->*/}
+        */}
             </body>
         )
     }
