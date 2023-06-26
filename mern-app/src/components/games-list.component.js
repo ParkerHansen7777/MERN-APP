@@ -15,17 +15,18 @@ const Game = props => (
     </tr>
 )
 
-/*const Result = props => (
+
+const Result = props => (
     <tr>
-        <td>{username}</td>
-        <td>{# of games played}</td>
-        <td>{# of wins}</td>
-        <td>{# of draws}</td>
-        <td>{# of loses}</td>
-        <td>{# of pts}</td>
+        <td>{props.result.username}</td>
+        <td>{props.result.games_played}</td>
+        <td>{props.result.wins}</td>
+        <td>{props.result.draws}</td>
+        <td>{props.result.loses}</td>
+        <td>{props.result.pts}</td>
     </tr>
 )
-*/
+
 
 export default class GamesList extends Component {
     constructor(props){
@@ -61,9 +62,55 @@ export default class GamesList extends Component {
         })
     }
 
-    /*resultsTable() {
-        
-    }*/
+    resultsTable() {
+
+        const gamesMap = this.state.games.map(currentgame => 
+            [currentgame.username, currentgame.result]
+        )
+    
+        const resultsMap = new Map();
+       
+        let results_arr = [0, 0, 0, 0, 0]
+        for (let it of gamesMap.entries()){
+            
+           
+           
+            if (!resultsMap.has(it[1][0])){
+                results_arr = [0, 0, 0, 0, 0]
+                resultsMap.set(it[1][0], results_arr)
+               
+            } 
+          
+           results_arr = resultsMap.get(it[1][0]); 
+           
+           if(it[1][1] === 'Win'){
+                results_arr[0]++
+                results_arr[1]++
+                results_arr[4]+=3
+                resultsMap.set(it[1][0], results_arr)
+              
+            }
+            else if(it[1][1] === 'Draw'){
+                results_arr[0]++
+                results_arr[2]++
+                results_arr[4]++
+                resultsMap.set(it[1][0], results_arr)
+               
+            }
+            else if(it[1][1] === 'Loss'){
+                results_arr[0]++
+                results_arr[3]++
+                resultsMap.set(it[1][0], results_arr)
+               
+            } 
+            
+        } 
+
+        console.log(resultsMap);
+       
+       //return resultsMap
+       
+    }
     render(){
         return(
             <body>
@@ -81,7 +128,7 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
-                {/* <h3>Results Table</h3>
+                 <h3>Results Table</h3>
                 <table className="table">
                     <thead className="thead">
                         <tr>
@@ -94,10 +141,9 @@ export default class GamesList extends Component {
                         </tr>
                     </thead>
                     <tbody className="tbody">
-                        {this.resultTable()}
+                        {this.resultsTable()}
                     </tbody>
                 </table> 
-        */}
             </body>
         )
     }
