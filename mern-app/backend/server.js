@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const corsOptions = {
-    origin: "http://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://gametracker-frontend.onrender.com" // frontend URI (ReactJS)
 }
 
 const app = express();                  /* creates Express server */
