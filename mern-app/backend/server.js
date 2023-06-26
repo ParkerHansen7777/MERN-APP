@@ -4,10 +4,14 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
+const corsOptions = {
+    origin: "http://localhost:3000" // frontend URI (ReactJS)
+}
+
 const app = express();                  /* creates Express server */
 const port = process.env.PORT || 5000;  /* port */
 
-app.use(cors());                        /* cors middleware */
+app.use(cors(corsOptions));                        /* cors middleware */
 app.use(express.json());                /* help to parse JSON */
 
 const uri = process.env.ATLAS_URI;

@@ -43,7 +43,7 @@ export default class EditGames extends Component {
             console.log(error);
           })
     
-      }
+    }
     
     
     onChangeUsername(e) {

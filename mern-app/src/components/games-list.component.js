@@ -15,6 +15,17 @@ const Game = props => (
     </tr>
 )
 
+/*const Result = props => (
+    <tr>
+        <td>{username}</td>
+        <td>{# of games played}</td>
+        <td>{# of wins}</td>
+        <td>{# of draws}</td>
+        <td>{# of loses}</td>
+        <td>{# of pts}</td>
+    </tr>
+)
+*/
 
 export default class GamesList extends Component {
     constructor(props){
@@ -49,6 +60,10 @@ export default class GamesList extends Component {
             return <Game game={currentgame} deleteGame={this.deleteGame} key={currentgame._id}/>;
         })
     }
+
+    /*resultsTable() {
+        
+    }*/
     render(){
         return(
             <body>
@@ -66,7 +81,7 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
-                <h3>Results Table</h3>
+                {/* <h3>Results Table</h3>
                 <table className="table">
                     <thead className="thead">
                         <tr>
@@ -79,9 +94,10 @@ export default class GamesList extends Component {
                         </tr>
                     </thead>
                     <tbody className="tbody">
-                        
+                        {this.resultTable()}
                     </tbody>
-                </table>
+                </table> 
+        -->*/}
             </body>
         )
     }
