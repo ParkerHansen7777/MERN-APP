@@ -18,12 +18,12 @@ const Game = props => (
 
 const Result = props => (
     <tr>
-        <td>{props.result.username}</td>
-        <td>{props.result.games_played}</td>
-        <td>{props.result.wins}</td>
-        <td>{props.result.draws}</td>
-        <td>{props.result.loses}</td>
-        <td>{props.result.pts}</td>
+        <td>{props.result.name}</td>
+        <td>{props.result.value[0]}</td>
+        <td>{props.result.value[1]}</td>
+        <td>{props.result.value[2]}</td>
+        <td>{props.result.value[3]}</td>
+        <td>{props.result.value[4]}</td>
     </tr>
 )
 
@@ -33,7 +33,7 @@ export default class GamesList extends Component {
         super(props);
 
         this.deleteGame = this.deleteGame.bind(this);
-        this.state = {games: []};
+        this.state = {games: [], results: []};
 
     }
 
@@ -69,7 +69,7 @@ export default class GamesList extends Component {
         )
     
         const resultsMap = new Map();
-       
+       //[games played, wins, draws, losses, points(3 for win, 1 for a draw)]
         let results_arr = [0, 0, 0, 0, 0]
         for (let it of gamesMap.entries()){
             
@@ -102,15 +102,24 @@ export default class GamesList extends Component {
                 results_arr[3]++
                 resultsMap.set(it[1][0], results_arr)
                
-            } 
-            
-        } 
+            }             
+        }
 
-        console.log(resultsMap);
-       
-       //return resultsMap
+        //console.log(resultsMap);
+        
+        let results = Array.from(resultsMap, ([name, value]) => ({ name, value})) 
+        //console.log(results);
+        
+        return results.map(currentresult => {
+            return <Result result={currentresult} key={currentresult.name}/>
+        }) 
+      
+        
        
     }
+    
+   
+    
     render(){
         return(
             <body>
