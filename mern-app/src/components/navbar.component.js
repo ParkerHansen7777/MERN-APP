@@ -8,7 +8,7 @@ export default class Navbar extends Component {
     render() {
         return (
           <nav className="navbar">
-            <Link to="/" className="navbar-brand">Chess Results Table</Link>
+            <Link to="/resultstable" className="navbar-brand">Chess Results Table</Link>
             <ul className="navbar-nav">
                 <li className="navbar-item">
                     <Link to="/" className="nav-link">Games</Link>

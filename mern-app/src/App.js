@@ -7,6 +7,7 @@ import GamesList from "./components/games-list.component";
 import EditGame from "./components/edit-games.component";
 import CreateGame from "./components/create-game.component";
 import CreateUser from "./components/create-user.component";
+import ResultsTable from "./components/results-table.component;";
 import "./App.css";
 import "./components/component.css";
 
@@ -16,6 +17,7 @@ function App() {
         <Navbar />
         <br/>
         <Route path="/" exact component={GamesList} />
+        <Route path="/resultstable" exact component={ResultsTable} />
         <Route path="/edit/:id" exact component={EditGame} />
         <Route path="/create" exact component={CreateGame} />
         <Route path="/user" exact component={CreateUser} />
