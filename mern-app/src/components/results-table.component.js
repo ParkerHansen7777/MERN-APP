@@ -23,7 +23,7 @@ export default class ResultsTable extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/games/')
+        axios.get('https://gametracker-backend.onrender.com/games/')
             .then(response => {
                 this.setState({ games: response.data })
             })
