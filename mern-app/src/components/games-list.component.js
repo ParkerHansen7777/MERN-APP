@@ -55,8 +55,18 @@ export default class GamesList extends Component {
     }   
     
     render(){
+       
+       
+        let connected;
+        if(this.state.games.length < 1){
+           connected = <h1>Backend spinning up....please wait a few seconds</h1>;
+        }
+       
         return(
             <body>
+                <div>
+                {connected}
+                </div>
                 <h3>Logged Games</h3>
                 <table className="table">
                     <thead className="thead">
