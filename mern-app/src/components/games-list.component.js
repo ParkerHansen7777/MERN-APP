@@ -35,8 +35,6 @@ export default class GamesList extends Component {
             })
     }
 
-    
-
     deleteGame(id) {
         axios.delete('http://localhost:5000/games/'+id)
             .then(res => console.log(res.data));
