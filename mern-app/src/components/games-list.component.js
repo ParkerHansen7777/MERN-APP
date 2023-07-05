@@ -32,10 +32,6 @@ export default class GamesList extends Component {
             })
             .catch((error) => {
                  console.log(error);
-                return (
-                      <h1>Backend spinning up....please wait a few seconds</h1>
-                  );
-                
             })
     }
 
