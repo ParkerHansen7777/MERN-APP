@@ -78,7 +78,9 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
+            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
+            
         )
     }
 }
