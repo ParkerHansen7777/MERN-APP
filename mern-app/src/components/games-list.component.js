@@ -31,7 +31,11 @@ export default class GamesList extends Component {
                 this.setState({ games: response.data })
             })
             .catch((error) => {
-                console.log(error);
+                 console.log(error);
+                return (
+                      <h1>Backend spinning up....please wait a few seconds</h1>
+                  );
+                
             })
     }
 
