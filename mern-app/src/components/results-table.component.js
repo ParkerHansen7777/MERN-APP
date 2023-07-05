@@ -89,8 +89,17 @@ export default class ResultsTable extends Component {
     }
 
     render(){
-        return(
+        
+		let connected;
+        if(this.state.games.length < 1){
+           connected = <h1>Backend spinning up....please wait a few seconds until page populates</h1>;
+        }
+		
+		return(
             <body>
+				<div>
+					{connected}
+				</div>
                 <h3>Results Table</h3>
                 <table className="table">
                     <thead className="thead">
