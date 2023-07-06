@@ -116,6 +116,7 @@ export default class ResultsTable extends Component {
                         {this.resultsTable()}
                     </tbody>
                 </table> 
+                <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
         );
     }
