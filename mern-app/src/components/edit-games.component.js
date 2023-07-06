@@ -130,6 +130,7 @@ export default class EditGames extends Component {
                     <input type="submit" value="Edit Game Log" className="btn btn-primary" />
                 </div>
             </form>
+            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
         </body>
         )
     }

@@ -118,6 +118,7 @@ export default class CreateGames extends Component {
                     <input type="submit" value="Create Game Log" className="btn btn-primary" />
                 </div>
             </form>
+            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
         </div>
         )
     }

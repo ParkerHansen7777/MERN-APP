@@ -54,6 +54,7 @@ export default class CreateUsers extends Component {
                         <input type="submit" value="Create User" className="btn btn-primary" />
                     </div>
                 </form>
+                <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
         )
     }
