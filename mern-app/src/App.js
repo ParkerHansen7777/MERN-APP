@@ -8,6 +8,7 @@ import EditGame from "./components/edit-games.component";
 import ResultsTable from "./components/results-table.component";
 import CreateGame from "./components/create-game.component";
 import CreateUser from "./components/create-user.component";
+import PageNotFound from "./components/pageNotFound.component"
 import "./App.css";
 import "./components/component.css";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/edit/:id" exact component={EditGame} />
         <Route path="/create" exact component={CreateGame} />
         <Route path="/user" exact component={CreateUser} />
+        <Route path="*" exact component={PageNotFound} />
     </Router>
   );
 }
