@@ -23,7 +23,7 @@ export default class ResultsTable extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://gametracker-backend.onrender.com/games/')
+        axios.get('http://localhost:5000/games/')
             .then(response => {
                 this.setState({ games: response.data })
             })
@@ -89,17 +89,8 @@ export default class ResultsTable extends Component {
     }
 
     render(){
-        
-		let connected;
-        if(this.state.games.length < 1){
-           connected = <h1>Backend spinning up....please wait a few seconds until page populates</h1>;
-        }
-		
-		return(
+        return(
             <body>
-				<div>
-					{connected}
-				</div>
                 <h3>Results Table</h3>
                 <table className="table">
                     <thead className="thead">
@@ -116,7 +107,6 @@ export default class ResultsTable extends Component {
                         {this.resultsTable()}
                     </tbody>
                 </table> 
-                <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
         );
     }

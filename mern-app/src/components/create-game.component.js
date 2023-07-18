@@ -19,7 +19,7 @@ export default class CreateGames extends Component {
     }
     
     componentDidMount() {
-       axios.get('https://gametracker-backend.onrender.com/users/')
+       axios.get('http://localhost:5000/users/')
         .then(response => {
             if (response.data.length > 0) {
                 this.setState({
@@ -61,7 +61,7 @@ export default class CreateGames extends Component {
 
         console.log(game);
 
-        axios.post('https://gametracker-backend.onrender.com/games/add', game)
+        axios.post('http://localhost:5000/games/add', game)
             .then(res => console.log(res.data));
         
     
@@ -118,7 +118,6 @@ export default class CreateGames extends Component {
                     <input type="submit" value="Create Game Log" className="btn btn-primary" />
                 </div>
             </form>
-            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
         </div>
         )
     }
