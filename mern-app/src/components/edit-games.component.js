@@ -19,7 +19,7 @@ export default class EditGames extends Component {
     }
     
     componentDidMount() {
-        axios.get('http://localhost:5000/games/'+this.props.match.params.id)
+        axios.get('https://gametracker-backend.onrender.com/games/'+this.props.match.params.id)
           .then(response => {
             this.setState({
               username: response.data.username,
@@ -31,7 +31,7 @@ export default class EditGames extends Component {
             console.log(error);
           })
     
-        axios.get('http://localhost:5000/users/')
+        axios.get('https://gametracker-backend.onrender.com/users/')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
@@ -77,7 +77,7 @@ export default class EditGames extends Component {
 
         console.log(game);
 
-        axios.post('http://localhost:5000/games/update/'+this.props.match.params.id, game)
+        axios.post('https://gametracker-backend.onrender.com/games/update/'+this.props.match.params.id, game)
             .then(res => console.log(res.data));
         
     
@@ -130,6 +130,7 @@ export default class EditGames extends Component {
                     <input type="submit" value="Edit Game Log" className="btn btn-primary" />
                 </div>
             </form>
+            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
         </body>
         )
     }

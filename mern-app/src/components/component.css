@@ -35,9 +35,9 @@ body{
 }
 
 .Page-footer {
-	background: #DDE0E3;
+	background: #878787;
     padding: 15px 10px;
-    position: relative; 
+    position: fixed; 
     left: 0;
     bottom: 0;
 	width: 100%;

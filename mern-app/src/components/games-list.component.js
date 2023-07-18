@@ -26,17 +26,17 @@ export default class GamesList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/games/')
+        axios.get('https://gametracker-backend.onrender.com/games/')
             .then(response => {
                 this.setState({ games: response.data })
             })
             .catch((error) => {
-                console.log(error);
+                 console.log(error);
             })
     }
 
     deleteGame(id) {
-        axios.delete('http://localhost:5000/games/'+id)
+        axios.delete('https://gametracker-backend.onrender.com/games/'+id)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -51,14 +51,17 @@ export default class GamesList extends Component {
     }   
     
     render(){
-        
+      
         let connected;
         if(this.state.games.length < 1){
-           connected = <h1>Backend spinning up....please wait a few seconds</h1>;
+           connected = <h1>Backend spinning up....please wait a few seconds until page populates</h1>;
         }
-        
+       
         return(
             <body>
+                <div>
+                {connected}
+                </div>
                 <h3>Logged Games</h3>
                 <div>
                 {connected}
@@ -76,7 +79,7 @@ export default class GamesList extends Component {
                         { this.gameList() }
                     </tbody>
                 </table>
-            <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
+                <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
             
         )
