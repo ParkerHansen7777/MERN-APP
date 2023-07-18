@@ -51,7 +51,7 @@ export default class GamesList extends Component {
     }   
     
     render(){
-       
+      
         let connected;
         if(this.state.games.length < 1){
            connected = <h1>Backend spinning up....please wait a few seconds until page populates</h1>;
@@ -63,6 +63,9 @@ export default class GamesList extends Component {
                 {connected}
                 </div>
                 <h3>Logged Games</h3>
+                <div>
+                {connected}
+                </div>
                 <table className="table">
                     <thead className="thead">
                         <tr>
@@ -78,6 +81,7 @@ export default class GamesList extends Component {
                 </table>
                 <footer className="Page-footer"><span>Created by Parker (© 2022)</span></footer>
             </body>
+            
         )
     }
 }
